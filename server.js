@@ -4,8 +4,9 @@ const mongoose =require('mongoose');
 const morgan = require('morgan');
 const bcrypt = require('bcrypt');
 const expressSession = require('express-session');
-const Content = require('./models/content')
 const methodOverride = require('method-override')
+const contentController = require('./controllers/contents');
+const contentRouter = require('./controllers/contents');
 
 // Route Dependencies
 
@@ -30,72 +31,8 @@ db.on('error', (error)=> console.log('MongoDB Error' + error.message));
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended: false}));
 
-
-//Index route
-app.get('/', (req, res)=>{
-    Content.find({}, (err, allContent)=>{
-
-        res.render('index', {
-            content: allContent
-        });
-    });
-});
-
-//New route
-app.get('/content/new',(req, res)=>{
-    res.render('new')
-});
-
-
-//Delete Route
-app.delete('/content/:id',(req, res)=>{
-    Content.findByIdAndDelete(req.params.id, (err, data)=>{
-        res.redirect('/')
-    })
-});
-
-//Update Route
-app.put('/content/:id',(req, res)=>{
-    Content.findByIdAndUpdate(
-        req.params.id,
-        req.body,
-        {
-            new: true,
-        },
-        (err, data)=>{
-            res.redirect(`/content/${req.params.id}`)
-        }
-    )
-})
-
-//Create route
-app.post('/',(req, res)=>{
-    Content.create(req.body, (err, data)=>{
-
-        res.redirect('/')
-    });
-});
-
-//Edit Route
-app.get('/content/:id/edit',(req,res)=>{
-    Content.findById(req.params.id, (err, foundContent)=>{
-
-        res.render('edit',{
-            content: foundContent
-        });
-    });
-});
-
-
-//Show route
-app.get('/content/:id', (req, res)=>{
-    Content.findById(req.params.id, (err, foundContent)=>{
-
-        res.render('show',{
-            content: foundContent
-        });
-    });
-});
+//Routes
+app.use('/', contentRouter);
 
 //Server Listening
 app.listen(PORT,()=>{
