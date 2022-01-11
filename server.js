@@ -54,16 +54,37 @@ app.delete('/content/:id',(req, res)=>{
     })
 });
 
+//Update Route
+app.put('/content/:id',(req, res)=>{
+    Content.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        {
+            new: true,
+        },
+        (err, data)=>{
+            res.redirect(`/content/${req.params.id}`)
+        }
+    )
+})
 
 //Create route
 app.post('/',(req, res)=>{
-    Content.create(req.body, (err, item)=>{
+    Content.create(req.body, (err, data)=>{
 
         res.redirect('/')
     });
 });
 
+//Edit Route
+app.get('/content/:id/edit',(req,res)=>{
+    Content.findById(req.params.id, (err, foundContent)=>{
 
+        res.render('edit',{
+            content: foundContent
+        });
+    });
+});
 
 
 //Show route

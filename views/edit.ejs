@@ -3,5 +3,13 @@
     <%- include('./partials/head.ejs') %> 
 <body>
     <%- include('./partials/header.ejs') %> 
+    <h1>Edit Post</h1>
+    <form action="/content/<%= content._id %>?_method=PUT" method="POST">
+       Name: <input type="text" name="title" value="<%= content.title %>"> <br>
+       Post: <input type="text" name="post" value="<%= content.post %>"> <br>
+       Img Url: <input type="text" name="img" value="<%= content.img %>"> <br>
+        <input type="submit" value="EDIT">
+    </form>
+    
 </body>
 </html>
