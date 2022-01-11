@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <%- include('./partials/head.ejs') %> 
 <body>
     <%- include('./partials/header.ejs') %>
 
     <ul> <% content.forEach(content => { %> 
         <li>
-         <h3> <%= content.title %> </h3>  <br>
-            <p><%= content.post%></p>
+            <div>
+               <a href="/content/<%= content._id %>"> <h3> <%= content.title %> </h3> </a> <br>
+                <p><%= content.post%></p>
+            </div>
         </li>
         <%  });  %> 
     </ul>

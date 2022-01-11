@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const bcrypt = require('bcrypt');
 const expressSession = require('express-session');
 const Content = require('./models/content')
+const methodOverride = require('method-override')
 
 // Route Dependencies
 
@@ -26,7 +27,7 @@ db.on('disconnected', ()=> console.log('disconnected to MongoDB'))
 db.on('error', (error)=> console.log('MongoDB Error' + error.message));
 
 //Middleware 
-
+app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended: false}));
 
 
@@ -40,7 +41,7 @@ app.get('/', (req, res)=>{
     });
 });
 
-//new route
+//New route
 app.get('/content/new',(req, res)=>{
     res.render('new')
 });
@@ -54,7 +55,7 @@ app.delete('/content/:id',(req, res)=>{
 });
 
 
-//create route
+//Create route
 app.post('/',(req, res)=>{
     Content.create(req.body, (err, item)=>{
 
@@ -63,6 +64,17 @@ app.post('/',(req, res)=>{
 });
 
 
+
+
+//Show route
+app.get('/content/:id', (req, res)=>{
+    Content.findById(req.params.id, (err, foundContent)=>{
+
+        res.render('show',{
+            content: foundContent
+        });
+    });
+});
 
 //Server Listening
 app.listen(PORT,()=>{
