@@ -32,9 +32,13 @@ app.use(express.urlencoded({extended: false}));
 
 //Index route
 app.get('/', (req, res)=>{
- res.render('index')
-});
+    Content.find({}, (err, allContent)=>{
 
+        res.render('index', {
+            content: allContent
+        });
+    });
+});
 
 //new route
 app.get('/content/new',(req, res)=>{

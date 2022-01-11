@@ -7,6 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Home</h1>
+    <ul> <% content.forEach(content => { %> 
+        <li>
+         <h3> <%= content.title %> </h3>  <br>
+            <p><%= content.post%></p>
+        </li>
+        <%  });  %> 
+    </ul>
 </body>
 </html>
