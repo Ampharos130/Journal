@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Home</h1>
+    <%- include('./partials/header.ejs') %>
+
     <ul> <% content.forEach(content => { %> 
         <li>
          <h3> <%= content.title %> </h3>  <br>

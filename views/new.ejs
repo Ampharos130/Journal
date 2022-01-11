@@ -7,6 +7,14 @@
     <title>Document</title>
 </head>
 <body>
+    <%- include('./partials/header.ejs') %>
+    <h1>Make a Post</h1>
+    <form action="/" method="POST">
+       Title: <input type="text" name="title"> <br>
+       Post: <input type="text" name="post"> <br>
+       img url: <input type="text" name="img"><br>
+        <input type="submit" value="Post">
+    </form>
     
 </body>
 </html>
