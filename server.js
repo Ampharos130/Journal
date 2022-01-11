@@ -30,6 +30,7 @@ db.on('error', (error)=> console.log('MongoDB Error' + error.message));
 //Middleware 
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended: false}));
+app.use(express.static('public'))
 
 //Routes
 app.use('/', contentRouter);
