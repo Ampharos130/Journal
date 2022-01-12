@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const contentSchema = new Schema({
     title: {type: String, required: true},
-    post: {type: String},
+    post: {type: String, required: true},
     img: {type: String},
 }, {timestamps: true});
 

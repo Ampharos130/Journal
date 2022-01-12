@@ -2,17 +2,19 @@
 <html lang="en">
     <%- include('./partials/head.ejs') %> 
 <body>
+<div class="containerShow">
     <%- include('./partials/header.ejs') %> 
-    <div>
+    <div class="showDiv">
     <h1><%= content.title %> </h1>
     <p><%= content.post  %> </p>
+    <img src="<%= content.img %>">
     </div>
-    <div>
+    <div class="editDel">
         <a href="/content/<%= content._id %>/edit"> edit</a> <br>
-        <form action="/content/<%= content._id %>?_method=DELETE" method="POST">
-            <input type="submit" value="x" >
+        <form action="/content/<%= content._id %>?_method=DELETE" method="POST" class="delForm">
+            <input type="submit" value="x" class="deletebtn">
        </form>
     </div>
-
+</div>
 </body>
 </html>

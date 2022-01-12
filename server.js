@@ -6,7 +6,6 @@ const bcrypt = require('bcrypt');
 const expressSession = require('express-session');
 const methodOverride = require('method-override')
 const contentController = require('./controllers/contents');
-const contentRouter = require('./controllers/contents');
 
 // Route Dependencies
 
@@ -33,7 +32,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.static('public'))
 
 //Routes
-app.use('/', contentRouter);
+app.use('/', contentController);
 
 //Server Listening
 app.listen(PORT,()=>{

@@ -1,0 +1,132 @@
+body{
+    font-family: 'Comfortaa', cursive;
+    background-color: rgb(134, 129, 141);
+}
+
+
+
+header{
+    display: flex;
+    flex-direction: column;
+    grid-area: header;
+    background-color: rgb(119, 116, 122);
+    text-align: center;
+    border-radius: 15px;
+    border-color: white;
+    border-style: solid;
+    border-width: thin;
+    
+   
+}
+
+header > nav{
+    text-align: start;
+    justify-content: space-evenly;
+    
+}
+
+
+
+ul{
+    display: flex;
+    list-style: none;
+    flex-direction: column-reverse;
+    justify-content: center;
+    text-align: center;
+    grid-area: ul;
+    
+}
+
+ul > li{
+    border: white;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: thin;
+}
+
+ol{
+    list-style: none;
+}
+
+li{
+    color: white;
+    margin-bottom: 25px;
+}
+
+a{
+    color: white;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 50px 200px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header header ul ul ul"
+    "header header ul ul ul"
+    "header header ul ul ul";
+}
+
+.containerShow{
+    display: grid;
+    grid-template-columns: 50px 200px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header header . div div "
+    "header header . div div "
+    "header header . div div ";
+}
+
+.showDiv{
+    margin-left: 80px;
+
+}
+
+.editDel{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 30px;
+}
+
+h1{
+    color: white;
+}
+
+p{
+    color: white;
+}
+
+.deletebtn{
+    border-style: none;
+    background-color: tomato;
+    color: white;
+    border-radius: 3px;
+}
+
+.delForm{
+    display: flex;
+    align-self: flex-start;
+    margin-top: 20px;
+}
+
+.editDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    grid-area: editDiv;
+}
+
+.containerEdit{
+        display: grid;
+        grid-template-columns: 50px 200px;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "header header . editDiv editDiv "
+        "header header . editDiv editDiv "
+        "header header . editDiv editDiv ";
+}
+

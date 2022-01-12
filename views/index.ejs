@@ -2,6 +2,7 @@
 <html lang="en">
     <%- include('./partials/head.ejs') %> 
 <body>
+    <div class="container">
     <%- include('./partials/header.ejs') %>
 
     <ul> <% content.forEach(content => { %> 
@@ -9,9 +10,11 @@
             <div>
                <a href="/content/<%= content._id %>"> <h3> <%= content.title %> </h3> </a> <br>
                 <p><%= content.post%></p>
+                <img src="<%= content.img %>">
             </div>
         </li>
         <%  });  %> 
     </ul>
+    </div>
 </body>
 </html>
