@@ -151,7 +151,7 @@ textarea{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    grid-area: editDiv;
+    grid-area: newDiv;
 }
 
 .containerNew{
@@ -159,7 +159,7 @@ textarea{
     grid-template-columns: 50px 200px;
     grid-template-rows: auto;
     grid-template-areas: 
-    "header header . editDiv editDiv "
-    "header header . editDiv editDiv "
-    "header header . editDiv editDiv "
+    "header header . newDiv newDiv "
+    "header header . newDiv newDiv "
+    "header header . newDiv newDiv "
 }
