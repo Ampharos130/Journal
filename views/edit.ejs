@@ -7,8 +7,8 @@
     <div class="editDiv">
     <h1>Edit Post</h1>
     <form action="/content/<%= content._id %>?_method=PUT" method="POST">
-       Name: <input type="text" name="title" value="<%= content.title %>"> <br>
-       Post: <input type="text" name="post" value="<%= content.post %>"> <br>
+       Title: <input type="text" name="title" value="<%= content.title %>"> <br>
+        <textarea name="post" cols="70" rows="10"><%= content.post %></textarea> <br>
        Img Url: <input type="text" name="img" value="<%= content.img %>"> <br>
         <input type="submit" value="EDIT">
     </form>

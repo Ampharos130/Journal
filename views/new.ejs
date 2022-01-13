@@ -2,14 +2,17 @@
 <html lang="en">
     <%- include('./partials/head.ejs') %> 
 <body>
+<div class="containerNew">
     <%- include('./partials/header.ejs') %>
+    <div class="newDiv">
     <h1>Make a Post</h1>
     <form action="/" method="POST">
        Title: <input type="text" name="title"> <br>
-       Post: <input type="text" name="post"> <br>
+       Post: <textarea name="post" cols="30" rows="10"></textarea> <br>
        img url: <input type="text" name="img"><br>
         <input type="submit" value="Post">
     </form>
-    
+    </div>
+</div>
 </body>
 </html>

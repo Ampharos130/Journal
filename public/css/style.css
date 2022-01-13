@@ -130,3 +130,36 @@ p{
         "header header . editDiv editDiv ";
 }
 
+input{
+        border-top-style: hidden;
+        border-right-style: hidden;
+        border-left-style: hidden;
+        border-bottom-style: groove;
+        background-color: rgb(134, 129, 141);
+}
+
+textarea{
+    margin-top: 15px;
+    border-top-style: groove;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color: rgb(134, 129, 141);
+}
+
+.newDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    grid-area: editDiv;
+}
+
+.containerNew{
+    display: grid;
+    grid-template-columns: 50px 200px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header header . editDiv editDiv "
+    "header header . editDiv editDiv "
+    "header header . editDiv editDiv "
+}
